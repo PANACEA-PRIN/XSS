@@ -1,0 +1,9 @@
+name: XSS_reflected
+description: '---'
+atomic_ordering:
+- 15760a2f-4442-4dfa-8164-114f39ab8af6
+- f3a500d4-ef0c-4e5b-8d65-9b608ab58bcf
+- 2885e547-1453-4cd2-ac70-28f73ce0e4d2
+- df1ce496-eb88-4aaa-9426-c3fe764bb54b
+adversary_id: 226ea0a5-8352-49dd-b878-797cab144eb5
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

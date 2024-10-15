@@ -1,0 +1,30 @@
+- tactic: reconnaissance
+  technique_name: Active Scanning
+  technique_id: T1580
+  name: Waf discover
+  description: Doscovering WAF usinf WAFW00F
+  executors:
+  - name: sh
+    platform: linux
+    command: wafw00f https://192.168.2.1
+    code: null
+    language: null
+    build_target: null
+    payloads: []
+    uploads: []
+    timeout: 600
+    parsers: []
+    cleanup: []
+    variations: []
+    additional_info: {}
+  requirements: []
+  privilege: ''
+  repeatable: false
+  buckets:
+  - reconnaissance
+  additional_info: {}
+  access: {}
+  singleton: false
+  plugin: ''
+  delete_payload: true
+  id: 599eeece-9c37-4f0c-91f8-9ceda705dd08

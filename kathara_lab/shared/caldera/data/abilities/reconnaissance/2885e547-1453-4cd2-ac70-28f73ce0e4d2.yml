@@ -1,0 +1,38 @@
+- tactic: reconnaissance
+  technique_name: 'Active Scanning: Vulnerability Scanning'
+  technique_id: T195.002
+  name: xss_Fuzzing to enumerate parameter
+  description: Fuzzing to enumerate and find vulnerable parameter
+  executors:
+  - name: sh
+    platform: linux
+    command: "\n  ffuf -w /home/attacker/params.txt:PARAM\
+      \     -H \"User-Agent: Mozilla/5.0\" -u \"#{endpoints}?PARAM=FFUF\" -mr \"FFUF\"\
+      \ -c -k | awk '{print "#{endpoints}?" $1}';\n"
+    code: null
+    language: null
+    build_target: null
+    payloads: []
+    uploads: []
+    timeout: 600
+    parsers:
+    - module: plugins.stockpile.app.parsers.basic
+      parserconfigs:
+      - source: output
+        edge: ''
+        target: valid_endpoints
+        custom_parser_vals: {}
+    cleanup: []
+    variations: []
+    additional_info: {}
+  requirements: []
+  privilege: ''
+  repeatable: false
+  buckets:
+  - reconnaissance
+  additional_info: {}
+  access: {}
+  singleton: false
+  plugin: ''
+  delete_payload: true
+  id: 2885e547-1453-4cd2-ac70-28f73ce0e4d2

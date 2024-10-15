@@ -1,0 +1,1 @@
+31.189.22.168: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:127.0) Gecko/20100101 Firefox/127.0, Linux x86_64, Netscape, 5.0 (X11; Ubuntu), it-IT, 1080, 1080, 24, Europe/Rome;

@@ -1,0 +1,37 @@
+- tactic: reconnaissance
+  technique_name: Active Scanning
+  technique_id: T1595
+  name: Enumerate endpoints with katana
+  description: Enumeration of endpoint using katana tool
+  executors:
+  - name: sh
+    platform: linux
+    command: ./root/go/bin/katana -u https://192.168.2.1 -aff  -d 10 --timeout 10
+      -jc --silent
+    code: null
+    language: null
+    build_target: null
+    payloads: []
+    uploads: []
+    timeout: 60
+    parsers:
+    - module: plugins.stockpile.app.parsers.basic
+      parserconfigs:
+      - source: output
+        edge: ''
+        target: url
+        custom_parser_vals: {}
+    cleanup: []
+    variations: []
+    additional_info: {}
+  requirements: []
+  privilege: ''
+  repeatable: false
+  buckets:
+  - reconnaissance
+  additional_info: {}
+  access: {}
+  singleton: false
+  plugin: ''
+  delete_payload: true
+  id: 14bd49c2-534f-4b1d-8cd2-aa1b3462aad0

@@ -1,0 +1,10 @@
+id: cd439658-5f6c-445b-bcc4-4707b888eaf4
+name: trest (2024-09-05T10:48:24.632Z)
+facts:
+- trait: host.ip.address
+  value: 192.168.2.1
+  score: 1
+- trait: host.file.path
+  value: //nmap.org
+  score: 1
+relationships: []

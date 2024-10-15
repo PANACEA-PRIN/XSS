@@ -1,0 +1,10 @@
+id: 7f6d1565-69f1-4cdc-b3ab-2d47f2d2aa57
+name: test
+facts:
+- trait: host.ip.address
+  value: 192.168.2.1
+  score: 1
+- trait: host.file.path
+  value: //192.168.2.1
+  score: 1
+relationships: []

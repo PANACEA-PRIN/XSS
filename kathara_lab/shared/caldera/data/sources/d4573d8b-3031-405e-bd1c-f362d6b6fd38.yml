@@ -1,0 +1,10 @@
+id: d4573d8b-3031-405e-bd1c-f362d6b6fd38
+name: TEST2 (2024-09-05T09:39:43.479Z)
+facts:
+- trait: host.ip.address
+  value: 192.168.2.1
+  score: 1
+- trait: host.file.path
+  value: //nmap.org
+  score: 1
+relationships: []

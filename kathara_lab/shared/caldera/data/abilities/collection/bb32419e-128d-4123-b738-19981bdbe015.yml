@@ -1,0 +1,23 @@
+- requirements: []
+  name: prova
+  description: v
+  tactic: collection
+  technique_id: T1001.002
+  technique_name: Abuse Elevation Control Mechanism
+  executors:
+  - cleanup: []
+    timeout: 60
+    platform: darwin
+    name: sh
+    payloads: []
+    parsers:
+    - module: set variable
+      parserconfigs:
+      - source: output
+        edge: ''
+        target: ''
+    command: "for url in ${endpoints}; do\n          ffuf -w /usr/share/wordlists/seclists/Discovery/Web-Content/burp-parameter-names.txt:PARAM\
+      \ \\\n            -H \"User-Agent: Mozilla/5.0\" -u \"$url?PARAM=FFUF\" -mr\
+      \ \"FFUF\" -c -k | awk -v base_url=\"$url\" '{print base_url \"?\" $1 }';\n\
+      \        done"
+  id: bb32419e-128d-4123-b738-19981bdbe015

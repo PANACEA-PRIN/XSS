@@ -1,0 +1,37 @@
+- tactic: reconnaissance
+  technique_name: 'Active Scanning: Vulnerability Scanning'
+  technique_id: T1595.002
+  name: xss_DirSearch finding endpoint
+  description: Finding endpoint using dirsearch and filtering for status 200
+  executors:
+  - name: sh
+    platform: linux
+    command: dirsearch -u https://192.168.2.1 -e php,html,js -t 10 -q | grep '200'
+      | awk '{print $6}'
+    code: null
+    language: null
+    build_target: null
+    payloads: []
+    uploads: []
+    timeout: 600
+    parsers:
+    - module: plugins.stockpile.app.parsers.basic
+      parserconfigs:
+      - source: output
+        edge: ''
+        target: endpoints
+        custom_parser_vals: {}
+    cleanup: []
+    variations: []
+    additional_info: {}
+  requirements: []
+  privilege: ''
+  repeatable: false
+  buckets:
+  - reconnaissance
+  additional_info: {}
+  access: {}
+  singleton: false
+  plugin: ''
+  delete_payload: true
+  id: f3a500d4-ef0c-4e5b-8d65-9b608ab58bcf

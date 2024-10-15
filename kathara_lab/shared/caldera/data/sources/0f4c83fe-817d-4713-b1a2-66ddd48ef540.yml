@@ -1,0 +1,40 @@
+id: 0f4c83fe-817d-4713-b1a2-66ddd48ef540
+name: trest (2024-09-05T10:58:23.188Z)
+facts:
+- trait: host.ip.address
+  value: 192.168.2.1
+  score: 1
+- trait: host.file.path
+  value: //nmap.org
+  score: 1
+- trait: output
+  value: https://192.168.2.1/home
+  score: 1
+- trait: endpoints
+  value: https://192.168.2.1/home
+  score: 2
+- trait: output
+  value: https://192.168.2.1/info
+  score: 1
+- trait: endpoints
+  value: https://192.168.2.1/info
+  score: 1
+- trait: output
+  value: https://192.168.2.1/login
+  score: 1
+- trait: endpoints
+  value: https://192.168.2.1/login
+  score: 1
+- trait: output
+  value: https://192.168.2.1/login.html
+  score: 1
+- trait: endpoints
+  value: https://192.168.2.1/login.html
+  score: 1
+- trait: output
+  value: "https://192.168.2.1/home?\r\e[2K\e[32musername"
+  score: 1
+- trait: valid_endpoints
+  value: "https://192.168.2.1/home?\r\e[2K\e[32musername"
+  score: 1
+relationships: []

@@ -1,0 +1,34 @@
+id: db43f40a-85b1-4c0e-b08b-efd6d4370bbe
+name: XSS (2024-09-06T08:13:19.182Z)
+facts:
+- trait: host.ip.address
+  value: 192.168.2.1
+  score: 1
+- trait: host.file.path
+  value: //nmap.org
+  score: 1
+- trait: output
+  value: https://192.168.2.1/home
+  score: 1
+- trait: endpoints
+  value: https://192.168.2.1/home
+  score: 1
+- trait: output
+  value: https://192.168.2.1/info
+  score: 1
+- trait: endpoints
+  value: https://192.168.2.1/info
+  score: 1
+- trait: output
+  value: https://192.168.2.1/login.html
+  score: 1
+- trait: endpoints
+  value: https://192.168.2.1/login.html
+  score: 1
+- trait: output
+  value: https://192.168.2.1/login
+  score: 1
+- trait: endpoints
+  value: https://192.168.2.1/login
+  score: 1
+relationships: []

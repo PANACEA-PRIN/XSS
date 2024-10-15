@@ -1,0 +1,96 @@
+# Configurazione principale di Suricata
+%YAML 1.1
+---
+# Configurazione del file di logging
+vars:
+  address-groups:
+    HOME_NET: "[192.168.2.0/24]"
+
+# Configurazione delle interfacce di rete da monitorare
+af-packet:
+  - interface: eth0
+    cluster-id: 1
+    cluster-type: cluster_flow
+    defrag: yes
+    use-mmap: yes
+    ring-size: 200000
+
+
+# Output logging
+outputs:
+  - eve-log:
+      enabled: yes
+      filetype: regular
+      filename: /var/log/suricata/eve.json
+      community-id: yes
+      xff:
+        enabled: no
+        mode: extra-data
+        deployment: reverse
+        header: X-Forwarded-For
+      types:
+        - alert:
+            payload: yes
+            payload-printable: yes
+            packet: yes
+            http:
+              extended: yes
+            tls:
+              extended: yes
+ 
+  - console:      
+      enabled: yes  
+  - file:      
+      enabled: yes      
+      filename: /var/log/suricata/suricata.log
+
+# Configurazione dei file di regole
+rule-files:
+  - /etc/suricata/rules/xss.rules
+
+# Alte impostazioni opzionali
+default-rule-path: /etc/suricata/rules
+logging:
+  default-log-level: info
+  outputs:
+    - console:
+        enabled: yes
+        type: json
+    - file:
+        enabled: yes
+        level: info
+        filename: /var/log/suricata/suricata.log
+
+# Configurazione dei flussi di rete
+flow:
+  memcap: 33554432
+  prealloc: 10000
+  emergency-recovery: 30
+  hash-size: 65536
+
+stream:
+  memcap: 268435456
+  checksum-validation: yes
+  inline: auto
+  reassembly:
+    memcap: 67108864
+    depth: 1mb
+    toserver-chunk-size: 2560
+    toclient-chunk-size: 2560
+
+host-os-policy:
+  windows: [0.0.0.0/0]
+
+app-layer:
+  protocols:
+    http:
+      enabled: yes
+      libhtp:
+        default:
+          personality: IDS
+          request-body-limit: 100kb
+          response-body-limit: 100kb
+          response-body-md5: yes
+          request-body-md5: yes
+
+# altre impostazioni...

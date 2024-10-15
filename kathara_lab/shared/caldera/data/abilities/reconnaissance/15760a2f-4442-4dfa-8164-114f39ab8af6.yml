@@ -1,0 +1,30 @@
+- tactic: reconnaissance
+  technique_name: 'Active Scanning: Vulnerability Scanning'
+  technique_id: T1595.002
+  name: xss_NMAP scanning
+  description: Scanning with NMAP using httpd-xssed to discovery know xss vulnerability
+  executors:
+  - name: sh
+    platform: linux
+    command: nmap --script http-xssed -p 443 192.168.2.1
+    code: null
+    language: null
+    build_target: null
+    payloads: []
+    uploads: []
+    timeout: 600
+    parsers: []
+    cleanup: []
+    variations: []
+    additional_info: {}
+  requirements: []
+  privilege: ''
+  repeatable: false
+  buckets:
+  - reconnaissance
+  additional_info: {}
+  access: {}
+  singleton: false
+  plugin: ''
+  delete_payload: true
+  id: 15760a2f-4442-4dfa-8164-114f39ab8af6

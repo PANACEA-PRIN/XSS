@@ -1,0 +1,30 @@
+- tactic: build-capabilities
+  technique_name: Develop Capabilities
+  technique_id: T1587
+  name: Create server with apache
+  description: Create PHP server on port 443 with HTTPS self-signed certificate
+  executors:
+  - name: sh
+    platform: linux
+    command: 'service apache2 start & '
+    code: null
+    language: null
+    build_target: null
+    payloads: []
+    uploads: []
+    timeout: 60
+    parsers: []
+    cleanup: []
+    variations: []
+    additional_info: {}
+  requirements: []
+  privilege: ''
+  repeatable: false
+  buckets:
+  - build-capabilities
+  additional_info: {}
+  access: {}
+  singleton: false
+  plugin: ''
+  delete_payload: true
+  id: b14089c2-35a6-40bd-bf72-3a7f16a49884

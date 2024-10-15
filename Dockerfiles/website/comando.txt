@@ -1,0 +1,4 @@
+docker stop website_lab
+docker rm website_lab
+docker build -t website_lab -f Dockerfile .
+docker run -d -p 8080:80 --name website_lab website_lab

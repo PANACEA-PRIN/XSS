@@ -1,0 +1,10 @@
+id: e17a760f-901c-4f27-baba-92fa7ef63749
+name: TEST2
+facts:
+- trait: host.ip.address
+  value: 192.168.2.1
+  score: 1
+- trait: host.file.path
+  value: //nmap.org
+  score: 1
+relationships: []

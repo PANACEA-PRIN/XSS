@@ -1,0 +1,15 @@
+- requirements: []
+  name: Discover params with Arjun
+  description: Discover params for POST API call
+  tactic: discovery
+  technique_id: T1595
+  technique_name: Active Scanning
+  executors:
+  - cleanup: []
+    timeout: 60
+    platform: linux
+    name: sh
+    payloads: []
+    parsers: []
+    command: 'arjun -u #{url}'
+  id: 2c3b7ac9-c964-45e1-bd70-2a31d1245fcf

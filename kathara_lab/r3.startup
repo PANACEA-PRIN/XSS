@@ -1,0 +1,19 @@
+ip address add 10.10.3.2/29 dev eth0
+ip address add 192.168.2.1/24 dev eth1
+
+echo 'nameserver 1.1.1.1' >> /etc/resolv.conf
+
+
+iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
+
+openssl pkcs12 -export -out /etc/lab.p12 -inkey /etc/ssl/private/lab.key -in /etc/ssl/certs/lab.crt --passout pass:PASSWORD
+
+mkdir /var/log/TlsTerminationProxy/
+
+/etc/init.d/zebra start
+
+
+./PolarProxy --connect 192.168.2.10 --nosni 192.168.2.10 --leafcert load:192.168.2.10:/etc/lab.p12:PASSWORD -p 443,80,443 -o /var/log/TlsTerminationProxy/ --pcapoverip 57012  & 
+sleep 10
+bash -c "nc localhost 57012 | tcpreplay -i eth1 -t -" & 
+

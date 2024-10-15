@@ -1,0 +1,30 @@
+- tactic: build-capabilities
+  technique_name: Develop Capabilities
+  technique_id: T1595
+  name: Beef server start
+  description: 'Starting beef server to hook the website '
+  executors:
+  - name: sh
+    platform: linux
+    command: cd /beef && ./beef &
+    code: null
+    language: null
+    build_target: null
+    payloads: []
+    uploads: []
+    timeout: 60
+    parsers: []
+    cleanup: []
+    variations: []
+    additional_info: {}
+  requirements: []
+  privilege: ''
+  repeatable: false
+  buckets:
+  - build-capabilities
+  additional_info: {}
+  access: {}
+  singleton: false
+  plugin: ''
+  delete_payload: true
+  id: b9575129-29f0-48d9-b7ee-19c00f9748f0

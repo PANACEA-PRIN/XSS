@@ -1,0 +1,11 @@
+name: XSS_Stored
+description: '---'
+atomic_ordering:
+- 599eeece-9c37-4f0c-91f8-9ceda705dd08
+- 14bd49c2-534f-4b1d-8cd2-aa1b3462aad0
+- 2c3b7ac9-c964-45e1-bd70-2a31d1245fcf
+- 0b9676c9-dab2-480d-bdc0-3d2cd4ff590b
+- b17f261d-435a-49be-8d6e-4fdda7df3557
+- f5ee815f-2e57-4e33-9e3a-053ee2ae0b4c
+adversary_id: 802f4cf4-9a11-403d-a38e-711c5daa0801
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

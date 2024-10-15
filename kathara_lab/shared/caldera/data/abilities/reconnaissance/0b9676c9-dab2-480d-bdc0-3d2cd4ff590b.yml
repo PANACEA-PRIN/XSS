@@ -1,0 +1,31 @@
+- tactic: reconnaissance
+  technique_name: 'Active Scanning: Vulnerability Scanning'
+  technique_id: T1580
+  name: 'Scanning with XSStrike '
+  description: Scanning with XSStrike to find some vulnerabilities the WAF won't detects/block
+  executors:
+  - name: sh
+    platform: linux
+    command: python3 /opt/XSStrike/xsstrike.py -u https://192.168.2.1/home?username=q
+      --timeout 120
+    code: null
+    language: null
+    build_target: null
+    payloads: []
+    uploads: []
+    timeout: 600
+    parsers: []
+    cleanup: []
+    variations: []
+    additional_info: {}
+  requirements: []
+  privilege: ''
+  repeatable: false
+  buckets:
+  - reconnaissance
+  additional_info: {}
+  access: {}
+  singleton: false
+  plugin: ''
+  delete_payload: true
+  id: 0b9676c9-dab2-480d-bdc0-3d2cd4ff590b

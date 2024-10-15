@@ -1,0 +1,34 @@
+id: d05abd59-2751-4414-8a8e-6743c06dd77a
+name: PRova
+facts:
+- trait: host.ip.address
+  value: 192.168.2.1
+  score: 1
+- trait: host.file.path
+  value: //nmap.org
+  score: 1
+- trait: output
+  value: https://192.168.2.1/home
+  score: 1
+- trait: endpoints
+  value: https://192.168.2.1/home
+  score: 1
+- trait: output
+  value: https://192.168.2.1/info
+  score: 1
+- trait: endpoints
+  value: https://192.168.2.1/info
+  score: 1
+- trait: output
+  value: https://192.168.2.1/login
+  score: 1
+- trait: endpoints
+  value: https://192.168.2.1/login
+  score: 1
+- trait: output
+  value: https://192.168.2.1/login.html
+  score: 1
+- trait: endpoints
+  value: https://192.168.2.1/login.html
+  score: 1
+relationships: []

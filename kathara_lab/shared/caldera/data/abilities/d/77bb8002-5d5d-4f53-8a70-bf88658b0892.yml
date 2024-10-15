@@ -1,0 +1,23 @@
+- requirements: []
+  name: da
+  description: da
+  tactic: d
+  technique_id: d
+  technique_name: 'Abuse Elevation Control Mechanism: Setuid and Setgid'
+  executors:
+  - cleanup: []
+    timeout: 60
+    platform: linux
+    name: sh
+    payloads: []
+    parsers:
+    - module: set varaible
+      parserconfigs:
+      - source: output
+        edge: ''
+        target: ''
+    command: "for url in ${endpoints}; do\n          ffuf -w /usr/share/wordlists/seclists/Discovery/Web-Content/burp-parameter-names.txt:PARAM\
+      \ \\\n            -H \"User-Agent: Mozilla/5.0\" -u \"$url?PARAM=FFUF\" -mr\
+      \ \"FFUF\" -c -k | awk -v base_url=\"$url\" '{print base_url \"?\" $1 }';\n\
+      \        done"
+  id: 77bb8002-5d5d-4f53-8a70-bf88658b0892

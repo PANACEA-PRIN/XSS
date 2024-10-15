@@ -1,0 +1,15 @@
+FROM theasp/novnc
+RUN apt update && install -d -m 0755 /etc/apt/keyrings
+RUN apt install wget 
+RUN wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
+RUN echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" |  tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
+RUN echo '\
+Package: *\
+Pin: origin packages.mozilla.org\
+Pin-Priority: 1000\
+\
+Package: firefox*\
+Pin: release o=Ubuntu\
+Pin-Priority: -1' | tee /etc/apt/preferences.d/mozilla
+RUN apt-get update --fix-missing &&  apt install -y firefox
+RUN apt-get install -y iproute2

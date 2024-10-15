@@ -1,0 +1,30 @@
+- tactic: reconnaissance
+  technique_name: Active Scanning
+  technique_id: T1595
+  name: Discover params with Arjun
+  description: Discover params for POST API call
+  executors:
+  - name: sh
+    platform: linux
+    command: 'arjun -u #{url}'
+    code: null
+    language: null
+    build_target: null
+    payloads: []
+    uploads: []
+    timeout: 60
+    parsers: []
+    cleanup: []
+    variations: []
+    additional_info: {}
+  requirements: []
+  privilege: ''
+  repeatable: false
+  buckets:
+  - discovery
+  additional_info: {}
+  access: {}
+  singleton: false
+  plugin: ''
+  delete_payload: true
+  id: 2c3b7ac9-c964-45e1-bd70-2a31d1245fcf

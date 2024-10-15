@@ -1,0 +1,16 @@
+id: db18ee65-477e-45a1-aff9-f323a2248543
+name: PRAVA (2024-09-11T16:15:26.057Z)
+facts:
+- trait: host.ip.address
+  value: 192.168.2.1
+  score: 1
+- trait: host.file.path
+  value: //192.168.2.1
+  score: 1
+- trait: host.file.path
+  value: /+/onpoINTerenter%0a=%0a[8].find(confirm)>v3dm0s
+  score: 1
+- trait: host.file.path
+  value: /+/onMouseover%0a=%0a[8].find(confirm)>v3dm0s
+  score: 1
+relationships: []

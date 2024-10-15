@@ -1,0 +1,32 @@
+- tactic: resource-development
+  technique_name: Develop Capabilities
+  technique_id: T1587
+  name: Create certificate for server
+  description: Create the certificate for the php server on HTTPS
+  executors:
+  - name: sh
+    platform: linux
+    command: cd /home/attacker && openssl req -x509 -nodes -days 365 -newkey rsa:2048
+      -keyout server.key -out server.crt -subj "/C=IT/ST=Lazio/L=Rome/O=MyCompany/OU=IT
+      Department/CN=127.0.0.1"
+    code: null
+    language: null
+    build_target: null
+    payloads: []
+    uploads: []
+    timeout: 60
+    parsers: []
+    cleanup: []
+    variations: []
+    additional_info: {}
+  requirements: []
+  privilege: ''
+  repeatable: false
+  buckets:
+  - resource-development
+  additional_info: {}
+  access: {}
+  singleton: false
+  plugin: ''
+  delete_payload: true
+  id: fc37ea32-2e62-46e9-b705-1395c2cd730f

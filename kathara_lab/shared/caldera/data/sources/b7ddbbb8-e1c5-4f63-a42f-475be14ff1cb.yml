@@ -1,0 +1,32 @@
+id: b7ddbbb8-e1c5-4f63-a42f-475be14ff1cb
+name: TEST1 (2024-09-05T08:42:52.960Z)
+facts:
+- unique: host.ip.address192.168.2.1
+  trait: host.ip.address
+  name: host.ip.address
+  value: 192.168.2.1
+  created: '2024-09-05T08:47:08Z'
+  score: 1
+  source: b7ddbbb8-e1c5-4f63-a42f-475be14ff1cb
+  origin_type: IMPORTED
+  links: []
+  relationships: []
+  limit_count: -1
+  collected_by: []
+  technique_id: null
+- unique: host.file.path//nmap.org
+  trait: host.file.path
+  name: host.file.path
+  value: //nmap.org
+  created: '2024-09-05T08:47:08Z'
+  score: 1
+  source: b7ddbbb8-e1c5-4f63-a42f-475be14ff1cb
+  origin_type: IMPORTED
+  links: []
+  relationships: []
+  limit_count: -1
+  collected_by: []
+  technique_id: null
+rules: []
+relationships: []
+plugin: ''
